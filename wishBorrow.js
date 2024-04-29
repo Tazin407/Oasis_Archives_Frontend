@@ -44,14 +44,19 @@ const AddWishOrBorrow = (book_id, user_id, param) => {
     }
     )
   }
-        
-
-
-
-      
+ 
   else {
-
-    fetch(`https://oasisarchivesapi.onrender.com/borrow/?user_id=${user_id}&book_id=${book_id}&returned=False`)
+    fetch(`https://oasisarchivesapi.onrender.com/Books/${book_id}`)
+    .then((res)=>res.json())
+    .then((data)=>{
+       if (data["numbers"]===0){
+        document.getElementById("borrow").outerHTML = `
+       
+        <button class="btn btn-danger" > Not available now</button>
+        `;
+       }
+       else{
+        fetch(`https://oasisarchivesapi.onrender.com/borrow/?user_id=${user_id}&book_id=${book_id}&returned=False`)
       .then((res) => res.json())
       .then((data) => {
         if (data.length===0) {
@@ -74,10 +79,7 @@ const AddWishOrBorrow = (book_id, user_id, param) => {
        
        <button class="btn btn-light" > ✔️ Borrowed</button>
        `;
-
-
-
-        }
+}
         else {
 
           document.getElementById("borrow").outerHTML = `
@@ -87,6 +89,12 @@ const AddWishOrBorrow = (book_id, user_id, param) => {
 
         }
       })
+
+       }
+
+    })
+
+    
 
 
   }
