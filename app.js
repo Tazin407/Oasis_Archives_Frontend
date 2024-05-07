@@ -88,7 +88,7 @@ const loadCatalogue= () =>{
 
             // div.classList.add("flex")
             div.innerHTML=`
-            <div class="card bg-black m-3 p-2" style="width: 18rem;">
+            <div class="card bg-white m-3 p-2" style="width: 18rem;">
   
          <img src="${item.image}" class="card-img-top size-40 w-100 p-2" alt="Book image">
     
