@@ -23,6 +23,7 @@ const handleregister=(event)=>{
         password,
         confirm_password,
       };
+      console.log(info);
       
     fetch("https://oasisarchivesapi.onrender.com/users/register/",{
         method :"POST",
@@ -30,7 +31,10 @@ const handleregister=(event)=>{
         body: JSON.stringify(info),
     })
     .then((res)=>res.json())
-    .then((data) => changeModalText(data["email"]));
+    .then((data) => {
+        console.log(data);
+        document.getElementById("submitError").innerText=data["email"][0];
+    });
 
 };
 
