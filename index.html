@@ -4,27 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oasis Archives</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="./style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
 <body >
     <!-- navbar starts -->
     <div class="myNavbar" >
-      <nav class="bg-sky-400 w-full z-20  start-0 border-b border-gray-200 dark:border-gray-600">
+      <nav class="bg-violet-300/40 w-full z-20  start-0 ">
           <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="./authenticatedHomepage.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo">
-              <span class="self-center text-4xl font-semibold italic whitespace-nowrap dark:text-white">Oasis Archives</span>
+          <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+
+              <span class="self-center text-4xl font-bold italic whitespace-nowrap text-violet-800 " >Oasis Archives</span>
           </a>
           <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-              <button onclick="handlelogout()" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><a href="./Login_page.html">Log in</a></button>
-              <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                </svg>
-            </button>
+              <button onclick="handlelogout()" type="button" class="text-white bg-violet-800 hover:bg-violet-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><a href="./Login_page.html">Log in</a></button>
+              
           </div>
           
           </div>
@@ -32,32 +28,39 @@
   </div>
     <!-- navbar ends -->
 
-    
-    <div class="m-auto w-50 items-center">
-        <h1 class="text-6xl font-bold italic text-rose-950 p-4 text-center"> Welcome to <br> Oasis Archives</h1><br>
-       <div class="m-4 bg-orange-200 rounded-md p-4">
-        <p class="text-2xl text-center" >A platform where you can enhance your knowledge by borrowing books without any cost or hassle. Be one of our member today and help us grow our community</p><br>
-        <a href="./signup_page.html" class="btn btn-light self-center"> Sign Up </a>
-       </div>
 
+    <main class="vh-100">
+        <div class="m-auto w-50 items-center p-6 my-11">
+            <h1 class="text-6xl font-bold italic text-violet-400  " style="text-shadow: 0 0 9px rgb(114, 25, 25), 0 0 9px rgb(114, 25, 25);"> Welcome to Oasis Archives</h1><br>
+           <div class="rounded-lg bg-gradient-to-l from-white/60 items-center p-2 sm:w-3/4">
+            <p class="text-xl  font-semibold " >A platform where you can enhance your knowledge by borrowing books without any cost or hassle. Be one of our member today and help us grow our community.</p>
+            <div class="flex items-center justify-start py-5">
+                <a href="./signup_page.html" > <button class="btn btn-wide bg-violet-400 text-black hover:bg-amber-300"> Sign Up</button></a>
+                <div id="spinner" ></div>
+            </div>
+           </div>
+    
+        </div>
+    
+        
+        
+    <div class=" flex flex-wrap items-center mx-auto p-5 gap-3 my-8" id="card-container">
+    
+       
     </div>
-
+      
     
-<div class=" flex items-center m-auto p-5" id="card-container">
-
     
-</div>
-  
+    </main>
 
-
-<footer class="bg-sky-400 w-100 ">
+ <footer class="bg-emerald-400 w-100 ">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
-              <a href="./homepage.html" class="flex items-center">
-                  <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3"  />
-                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Oasis Archives</span>
-              </a>
+            <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+
+                <span class="self-center text-4xl font-bold italic whitespace-nowrap text-violet-800 " >Oasis Archives</span>
+            </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
@@ -136,7 +139,7 @@
 </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
     <script src="./app.js" ></script>
     <!-- <script src="./details.js" ></script> -->
 </body>

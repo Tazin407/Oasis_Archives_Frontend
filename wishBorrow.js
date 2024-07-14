@@ -126,7 +126,7 @@ const handlewishlist = () => {
   fetch(`https://oasisarchivesapi.onrender.com/Books/?user_id=${user_param}`)
     .then((res) => res.json())
     .then((data) => {
-      const title = document.createElement("div");
+      const title = document.getElementById("wishLength") ; 
       title.innerText = `${data.length} book(s) in your wishlist `;
       title.classList.add('text-center', 'text-4xl', 'text-danger', 'm-4');
       parent.appendChild(title);
@@ -134,16 +134,27 @@ const handlewishlist = () => {
         const div = document.createElement("div");
         div.classList.add('card', 'w-50', 'm-auto', 'mt-2', 'bg-green-500/75', 'text-center', 'rounded-lg');
         div.innerHTML = `
-            <img class="w-25 m-auto mt-3" src="${info.image}" alt="Book image">
-            <h5 class="card-header"> <a href="book-details.html?BookId=${info.id}"><span class="underline underline-offset-1">${info.title}</span></a><br> by ${info.author}</h5>
+            <div class="card bg-violet-200/90 w-96 shadow-xl">
+  <figure class="px-2 pt-2">
+    <img
+      src="${info.image}"
+      alt="Book Image"
+      class="rounded-xl w-full h-48 object-cover"
+    />
+  </figure>
+  <div class="card-body text-left">
+    <h2 class="card-title">
+      <a target="_blank" href="book-details.html?BookId=${info.id}">
+        <p class="text-primary">${info.title}</p>
+        <br> by ${info.author}
+      </a>
+    </h2>
+    <p>Publish Date: ${info.date}<br>Genre: ${info.genre}</p>
+    <button id="borrow" onclick="AddWishOrBorrow(${info.id}, ${user_param}, 'borrow')" class="btn btn-danger w-full m-auto my-1">Borrow Now</button>
+      <button onclick="removeFromWish(${info.id})" class="btn btn-warning w-full m-auto my-1">Remove from wishlist</button>
+  </div>
+</div>
             
-    <div class="card-body">
-      <h5 class="card-title">genre: ${info.genre}</h5>
-      <p class="card-text">ISBN: 30942573t498</p>
-
-      <button id="borrow" onclick="AddWishOrBorrow(${info.id}, ${user_param}, 'borrow')" class="btn btn-danger m-3">Borrow Now</button>
-      <button onclick="removeFromWish(${info.id})" class="btn btn-warning m-3">Remove from wishlist</button>
-    </div>
             `;
         parent.appendChild(div);
       });

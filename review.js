@@ -78,16 +78,27 @@ const handleBorrowlist=()=>{
         data.forEach((info)=>{
           const div= document.createElement("div");
             div.innerHTML=`
-            <div class="card w-50 m-auto mt-2 bg-green-500/75 text-center rounded-lg">
-            <img class="w-25 m-auto mt-3" src="${info.image}" alt="Book image">
-            <h5 class="card-header link-underline-secondary"> <a class="underline underline-offset-1" href="book-details.html?BookId=${info.id}" > ${info.title} </a><br> by ${info.author}</h5>
-            <div class="card-body">
-              <h5 class="card-title">genre:${info.genre}</h5>
-              <p class="card-text">ISBN: ${info.ISBN}</p>
-              <button onclick="returnBook(${info.id})" id="returnedBook" class="btn btn-danger m-3">Return Now</button>
-            </div>
-          </div>
-        `;
+            <div class="card bg-violet-200/90 w-96 shadow-xl">
+  <figure class="px-2 pt-2">
+    <img
+      src="${info.image}"
+      alt="Book Image"
+      class="rounded-xl w-full h-48 object-cover"
+    />
+  </figure>
+  <div class="card-body text-left">
+    <h2 class="card-title">
+      <a target="_blank" href="book-details.html?BookId=${info.id}">
+        <p class="text-primary">${info.title}</p>
+        <br> by ${info.author}
+      </a>
+    </h2>
+    <p>Publish Date: ${info.date}<br>Genre: ${info.genre}</p>
+    <button onclick="returnBook(${info.id})" id="returnedBook" class="btn btn-danger m-3">Return Now</button>
+  </div>
+</div>
+            
+            `;
 
         parent.appendChild(div);
         });

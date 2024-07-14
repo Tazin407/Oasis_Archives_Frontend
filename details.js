@@ -31,13 +31,13 @@ const loadDetails = (data) => {
     // data.forEach(info)=>
     const parent = document.getElementById("detail-box");
     const result = document.createElement("div");
-    result.classList.add("flex")
+    result.classList.add("flex","flex-wrap","justify-center");
     result.innerHTML = `
             <div class="book-image m-auto p-3 ">
             <img class="rounded" src="${data.image}" alt="Book Image">
         
         </div>
-        <div class="book-details p-4 bg-white rounded-lg">
+        <div class="book-details p-4 bg-white rounded-lg w-11/12 ">
             <h1  class="font-bold text-3xl text-red-900">${data.title}</h1>
             <h4  class="text-xl m-1">by ${data.author}</h4><br>
             

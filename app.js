@@ -41,6 +41,8 @@ const handleregister=(event)=>{
 
 const handleLogin = (event) =>{
     event.preventDefault();
+    document.getElementById("spinner").innerHTML=`<span class="loading loading-spinner text-primary"></span>`
+   
     const email= getValue('email')
     const password= getValue('password')
     const LoginInfo={
@@ -92,24 +94,24 @@ const loadCatalogue= () =>{
 
             // div.classList.add("flex")
             div.innerHTML=`
-            <div class="card bg-white m-3 p-2" style="width: 18rem;">
-  
-         <img src="${item.image}" class="card-img-top size-40 w-100 p-2" alt="Book image">
-    
-    
-        <h5 class="card-title p-2"><a target='_blank' href="book-details.html?BookId=${item.id}" ><p class="text-primary" >${item.title} </p> <br> by ${item.author}</a></h5>
-        
-       
-        
-        <div class="card-body">
-          <p class="card-text">Publish Date: ${item.date}</p>
-        </div><br>
-    
-        <div class='d-flex p-2 justify-content-between'>
-         genre: ${item.genre}
-      </div>
-    
-      </div>
+            <div class="card bg-violet-200/90 w-96 shadow-xl">
+  <figure class="px-2 pt-2">
+    <img
+      src="${item.image}"
+      alt="Book Image"
+      class="rounded-xl w-full h-48 object-cover"
+    />
+  </figure>
+  <div class="card-body text-left">
+    <h2 class="card-title">
+      <a target="_blank" href="book-details.html?BookId=${item.id}">
+        <p class="text-primary">${item.title}</p>
+        <br> by ${item.author}
+      </a>
+    </h2>
+    <p>Publish Date: ${item.date}<br>Genre: ${item.genre}</p>
+  </div>
+</div>
             
             `;
 
@@ -118,24 +120,24 @@ const loadCatalogue= () =>{
         else{
 
             div.innerHTML=`
-            <div class="card m-3 p-2" style="width: 18rem;">
-  
-         <img src="${item.image}" class="card-img-top size-40 w-100 p-2" alt="Book image">
-    
-    
-        <h5 class="card-title p-2"><a target='_blank' href="Login_page.html" ><p class="text-primary" >${item.title} </p> <br> by ${item.author}</a></h5>
-        
-       
-        
-        <div class="card-body">
-          <p class="card-text">Publish Date: ${item.date}</p>
-        </div><br>
-    
-        <div class='d-flex p-2 justify-content-between'>
-         genre: ${item.genre}
-      </div>
-    
-      </div>
+             <div class="card bg-violet-200/90 w-96 shadow-xl">
+  <figure class="px-2 pt-2">
+    <img
+      src="${item.image}"
+      alt="Book Image"
+      class="rounded-xl w-full h-48 object-cover"
+    />
+  </figure>
+  <div class="card-body text-left">
+    <h2 class="card-title">
+      <a target="_blank" href="./Login_page.html">
+        <p class="text-primary">${item.title}</p>
+        <br> by ${item.author}
+      </a>
+    </h2>
+    <p>Publish Date: ${item.date}<br>Genre: ${item.genre}</p>
+  </div>
+</div>
             
             `;
             
